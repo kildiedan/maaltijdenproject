@@ -1,9 +1,18 @@
 <template>
-    <div>
-        Home Hello World
-    </div>
+  <div id="app">
+    Home Hello World
+  </div>
 </template>
 
 <script>
-export default {}
+export default {
+  name: "HelloWorld",
+  data() {
+    return {
+      name: "",
+      price: "",
+      amount: "",
+    };
+  },
+};
 </script>
