@@ -10,7 +10,7 @@
         <router-link to="/add">Add meal and ingredients</router-link>
       </li>
       <li>
-        <router-link to="/storage">Storage</router-link>
+        <router-link to="/ingredients">Storage</router-link>
       </li>
     </ul>
     <router-view></router-view>

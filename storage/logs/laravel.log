@@ -479,3 +479,36 @@
 #38 C:\\Users\\kildi\\OneDrive\\Documenten\\GitHub\\maaltijdenproject\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
 #39 {main}
 "} 
+[2022-06-03 11:42:38] local.ERROR: Too few arguments to function Illuminate\Routing\Router::apiResource(), 1 passed in C:\Users\kildi\OneDrive\Documenten\GitHub\maaltijdenproject\vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php on line 261 and at least 2 expected {"exception":"[object] (ArgumentCountError(code: 0): Too few arguments to function Illuminate\\Routing\\Router::apiResource(), 1 passed in C:\\Users\\kildi\\OneDrive\\Documenten\\GitHub\\maaltijdenproject\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php on line 261 and at least 2 expected at C:\\Users\\kildi\\OneDrive\\Documenten\\GitHub\\maaltijdenproject\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php:355)
+[stacktrace]
+#0 C:\\Users\\kildi\\OneDrive\\Documenten\\GitHub\\maaltijdenproject\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(261): Illuminate\\Routing\\Router->apiResource()
+#1 C:\\Users\\kildi\\OneDrive\\Documenten\\GitHub\\maaltijdenproject\outes\\api.php(21): Illuminate\\Support\\Facades\\Facade::__callStatic()
+#2 C:\\Users\\kildi\\OneDrive\\Documenten\\GitHub\\maaltijdenproject\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\RouteFileRegistrar.php(35): require('C:\\\\Users\\\\kildi\\\\...')
+#3 C:\\Users\\kildi\\OneDrive\\Documenten\\GitHub\\maaltijdenproject\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(425): Illuminate\\Routing\\RouteFileRegistrar->register()
+#4 C:\\Users\\kildi\\OneDrive\\Documenten\\GitHub\\maaltijdenproject\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(382): Illuminate\\Routing\\Router->loadRoutes()
+#5 C:\\Users\\kildi\\OneDrive\\Documenten\\GitHub\\maaltijdenproject\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\RouteRegistrar.php(135): Illuminate\\Routing\\Router->group()
+#6 C:\\Users\\kildi\\OneDrive\\Documenten\\GitHub\\maaltijdenproject\\app\\Providers\\RouteServiceProvider.php(44): Illuminate\\Routing\\RouteRegistrar->group()
+#7 C:\\Users\\kildi\\OneDrive\\Documenten\\GitHub\\maaltijdenproject\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): App\\Providers\\RouteServiceProvider->App\\Providers\\{closure}()
+#8 C:\\Users\\kildi\\OneDrive\\Documenten\\GitHub\\maaltijdenproject\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#9 C:\\Users\\kildi\\OneDrive\\Documenten\\GitHub\\maaltijdenproject\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(81): Illuminate\\Container\\Util::unwrapIfClosure()
+#10 C:\\Users\\kildi\\OneDrive\\Documenten\\GitHub\\maaltijdenproject\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#11 C:\\Users\\kildi\\OneDrive\\Documenten\\GitHub\\maaltijdenproject\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(651): Illuminate\\Container\\BoundMethod::call()
+#12 C:\\Users\\kildi\\OneDrive\\Documenten\\GitHub\\maaltijdenproject\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider.php(120): Illuminate\\Container\\Container->call()
+#13 C:\\Users\\kildi\\OneDrive\\Documenten\\GitHub\\maaltijdenproject\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider.php(45): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->loadRoutes()
+#14 C:\\Users\\kildi\\OneDrive\\Documenten\\GitHub\\maaltijdenproject\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->Illuminate\\Foundation\\Support\\Providers\\{closure}()
+#15 C:\\Users\\kildi\\OneDrive\\Documenten\\GitHub\\maaltijdenproject\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#16 C:\\Users\\kildi\\OneDrive\\Documenten\\GitHub\\maaltijdenproject\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(81): Illuminate\\Container\\Util::unwrapIfClosure()
+#17 C:\\Users\\kildi\\OneDrive\\Documenten\\GitHub\\maaltijdenproject\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#18 C:\\Users\\kildi\\OneDrive\\Documenten\\GitHub\\maaltijdenproject\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(651): Illuminate\\Container\\BoundMethod::call()
+#19 C:\\Users\\kildi\\OneDrive\\Documenten\\GitHub\\maaltijdenproject\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\ServiceProvider.php(113): Illuminate\\Container\\Container->call()
+#20 C:\\Users\\kildi\\OneDrive\\Documenten\\GitHub\\maaltijdenproject\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(917): Illuminate\\Support\\ServiceProvider->callBootedCallbacks()
+#21 C:\\Users\\kildi\\OneDrive\\Documenten\\GitHub\\maaltijdenproject\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(895): Illuminate\\Foundation\\Application->bootProvider()
+#22 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}()
+#23 C:\\Users\\kildi\\OneDrive\\Documenten\\GitHub\\maaltijdenproject\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(896): array_walk()
+#24 C:\\Users\\kildi\\OneDrive\\Documenten\\GitHub\\maaltijdenproject\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#25 C:\\Users\\kildi\\OneDrive\\Documenten\\GitHub\\maaltijdenproject\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(237): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap()
+#26 C:\\Users\\kildi\\OneDrive\\Documenten\\GitHub\\maaltijdenproject\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(310): Illuminate\\Foundation\\Application->bootstrapWith()
+#27 C:\\Users\\kildi\\OneDrive\\Documenten\\GitHub\\maaltijdenproject\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#28 C:\\Users\\kildi\\OneDrive\\Documenten\\GitHub\\maaltijdenproject\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#29 {main}
+"} 

@@ -17,7 +17,7 @@ export default new VueRouter({
             component: Add
         },
         {
-            path: "/storage",
+            path: "/ingredients",
             component: Storage
         },
 

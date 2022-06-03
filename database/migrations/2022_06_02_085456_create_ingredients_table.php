@@ -17,7 +17,6 @@ class CreateIngredientsTable extends Migration
             $table->id();
             $table->string('name')->unique();
             $table->foreignId('categorie_id');
-            $table->integer('storage');
             $table->timestamps();
         });
     }

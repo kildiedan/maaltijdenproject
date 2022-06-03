@@ -7,23 +7,21 @@
         <th>ingredient name</th>
         <th>portions</th>
       </tr>
-      <tr>
-        <td></td>
-        <td></td>
+      <tr v-for="ingredient in ingredients" :key="ingredient.id">
+        <td>{{ ingredient.name }}</td>
+        <td>{{ ingredient.storage }}</td>
       </tr>
     </table>
   </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
   name: "HelloWorld",
-  data() {
-    return {
-      name: "",
-      price: "",
-      amount: "",
-    };
+  computed: {
+    ...mapState(["ingredients"]),
   },
 };
 </script>
