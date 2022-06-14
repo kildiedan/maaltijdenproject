@@ -1,3 +1,7 @@
+import axios from 'axios';
+window.axios = axios;
+axios.defaults.baseURL = '/api/';
+
 import Vue from "vue";
 import App from "./App.vue";
 import store from "./store";
@@ -10,7 +14,4 @@ new Vue({
     router,
     render: (h) => h(App),
     store,
-    created () {
-        this.$store.dispatch('loadAllIngredients');
-    },
 });

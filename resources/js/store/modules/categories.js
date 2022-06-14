@@ -12,12 +12,7 @@ export const categories = {
     },
     actions: {
         async setAll({commit}) {
-            const {data} = await axios.get('categories');
-            commit('SET_ALL', data);
-        },
-        async create({commit}, payload) {
-            console.log();
-            const {data} = await axios.post('categories', payload);
+            const {data} = await axios.get('category');
             commit('SET_ALL', data);
         },
     },

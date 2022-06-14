@@ -4,6 +4,7 @@ import VueRouter from "vue-router";
 import Home from '../pages/Home.vue'
 import Add from '../pages/Add.vue'
 import Storage from '../pages/Storage.vue'
+import All from '../pages/All.vue'
 Vue.use(VueRouter);
 
 export default new VueRouter({
@@ -20,6 +21,11 @@ export default new VueRouter({
             path: "/ingredients",
             component: Storage
         },
+        {
+            path: "/all",
+            component: All
+        },
+
 
     ]
 });

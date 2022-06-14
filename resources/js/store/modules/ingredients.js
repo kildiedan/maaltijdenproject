@@ -20,5 +20,9 @@ export const ingredients = {
             const {data} = await axios.post('ingredients', payload);
             commit('SET_ALL', data);
         },
+        async remove({commit}, payload) {
+            const {data} = await axios.post('remove-ingredient', {id: payload});
+            commit('SET_ALL', data);
+        },
     },
 };

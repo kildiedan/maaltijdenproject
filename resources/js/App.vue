@@ -12,6 +12,9 @@
       <li>
         <router-link to="/ingredients">Storage</router-link>
       </li>
+      <li>
+        <router-link to="/all">All meal and ingredients</router-link>
+      </li>
     </ul>
     <router-view></router-view>
   </div>
