@@ -1,6 +1,6 @@
 import axios from "axios"
 
-export const meals = {
+export const storage = {
     namespaced: true,
     state: () => ({all: []}),
     getters: {
@@ -12,22 +12,17 @@ export const meals = {
     },
     actions: {
         async setAll({commit}) {
-            const {data} = await axios.get('meals');
+            const {data} = await axios.get('storage');
             commit('SET_ALL', data);
         },
         async create({commit}, payload) {
             console.log();
-            const {data} = await axios.post('meals', payload);
+            const {data} = await axios.post('storage', payload);
             commit('SET_ALL', data);
-        },
-        async ingredient_add({commit}, payload) {
-            console.log();
-            const {data} = await axios.post('meal_ingredient', payload);
-            // commit('SET_ALL', data);
         },
         async remove({commit}, payload) {
             
-            const {data} = await axios.post('remove-meal', {id: payload});
+            const {data} = await axios.post('storage_delete', {id: payload});
             commit('SET_ALL', data);
         },
     },

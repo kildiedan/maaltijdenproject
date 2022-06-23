@@ -10,6 +10,26 @@
         <td>{{ ingredient.name }}</td>
       </tr>
     </table>
+
+    <form enctype="multipart/form-data" @submit.prevent="storage_add">
+      <p>
+        ingredients:
+        <select v-model="selected" name="ingredients" id="ingredients">
+          <option value="0" hidden>select ingredient</option>
+          <option
+            v-for="ingredient in ingredients"
+            :key="ingredient.id"
+            :value="ingredient.id"
+            >{{ ingredient.name }}</option
+          >
+        </select>
+      </p>
+      <p>
+        ingredient amount:
+        <input type="number" id="amount" v-model="amount" />
+      </p>
+      <button>submit</button>
+    </form>
   </div>
 </template>
 
@@ -18,6 +38,13 @@ import { mapState } from "vuex";
 
 export default {
   name: "HelloWorld",
+  data() {
+    return {
+      selected: 0,
+      amount: 0,
+    };
+  },
+
   computed: {
     ingredients() {
       return this.$store.getters["ingredients/getAll"];
@@ -25,6 +52,16 @@ export default {
   },
   mounted() {
     this.$store.dispatch("ingredients/setAll");
+  },
+  methods: {
+    storage_add() {
+      const formData = new FormData();
+      formData.append("ingredient_id", this.selected);
+      formData.append("amount", this.amount);
+      this.$store.dispatch("storage/create", formData);
+      this.selected = 0;
+      this.amount = 0;
+    },
   },
 };
 </script>

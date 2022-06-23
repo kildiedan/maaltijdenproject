@@ -45,7 +45,7 @@ export default {
   methods: {
     login() {
       this.$store.dispatch("account/login", this.auth);
-      this.$router.push("home");
+      this.$router.push("/");
     },
   },
 };

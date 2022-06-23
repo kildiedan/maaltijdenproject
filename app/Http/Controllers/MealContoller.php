@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ingredient_meal;
 use App\Models\Meal;
 use Illuminate\Http\Request;
 
@@ -25,10 +26,27 @@ class MealContoller extends Controller
             'recipe' => $validated['recipe'],
             'chosen' => $validated['chosen'],
         ]);
+
+        $meals = Meal::all();
+        return $meals;
     }
     public function delete(Request $request)
     {
         $meal = Meal::findOrFail($request->id)->delete();
         return Meal::all();
+    }
+    public function add(Request $request)
+    {
+        $validated = $this->validate($request, [
+            'meal_id' => 'required',
+            'ingredient_id' => 'required',
+            'amount' => 'required',
+        ]);
+
+        $recepie = ingredient_meal::create([
+            'meal_id' => $validated['meal_id'],
+            'ingredient_id' => $validated['ingredient_id'],
+            'amount' => $validated['amount'],
+        ]);
     }
 }

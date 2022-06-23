@@ -6,7 +6,7 @@
 
       <p>
         ingredient name:
-        <input type="text" id="name_ingredient" v-model="name_ingredient" />
+        <input type="text" id="name" v-model="name" />
       </p>
 
       <p>
@@ -23,21 +23,6 @@
 
       <button>submit</button>
     </form>
-
-    <form enctype="multipart/form-data" @submit.prevent="submitMeal">
-      <p>a place to add meals</p>
-
-      <p>
-        meal name:
-        <input type="text" id="name_meal" v-model="name_meal" />
-      </p>
-
-      <p>
-        recipe:
-        <input type="text" id="recipe" v-model="recipe" />
-      </p>
-      <button>submit</button>
-    </form>
   </div>
 </template>
 
@@ -48,10 +33,7 @@ export default {
   name: "HelloWorld",
   data() {
     return {
-      name_ingredient: "",
-      name_meal: "",
-      recipe: "",
-      ingredients_used: [],
+      name: "",
       selected: 1,
     };
   },
@@ -66,21 +48,11 @@ export default {
   methods: {
     submitIngredient() {
       const formData = new FormData();
-      formData.append("name", this.name_ingredient);
+      formData.append("name", this.name);
       formData.append("category", this.selected);
       this.$store.dispatch("ingredients/create", formData);
-      this.name_ingredient = "";
+      this.name = "";
       this.selected = 1;
-    },
-    submitMeal() {
-      const formData = new FormData();
-      formData.append("name", this.name_meal);
-      formData.append("recipe", this.recipe);
-      formData.append("chosen", 0);
-      // formData.append("ingredients", this.ingredients_used);
-      this.$store.dispatch("meals/create", formData);
-      this.name_meal = "";
-      this.recipe = "";
     },
   },
 };

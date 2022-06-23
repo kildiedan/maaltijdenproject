@@ -7,13 +7,32 @@
         <router-link to="/">Home</router-link>
       </li>
       <li>
-        <router-link to="/add">Add meal and ingredients</router-link>
+        <router-link to="/add/meal">Add meal</router-link>
       </li>
+      <li>
+        <router-link to="/add/meal/ingredients"
+          >Add meal ingredient</router-link
+        >
+      </li>
+      <li>
+        <router-link to="/add/ingredient">Add ingredients</router-link>
+      </li>
+
       <li>
         <router-link to="/ingredients">Storage</router-link>
       </li>
       <li>
         <router-link to="/all">All meal and ingredients</router-link>
+      </li>
+
+      <li>
+        <router-link v-if="!isLoggedIn" to="/login">Login</router-link>
+        <a v-if="isLoggedIn" class="nav-link pe-auto" href="#" @click="logout">
+          Logout
+        </a>
+      </li>
+      <li>
+        <router-link v-if="!isLoggedIn" to="/register">Register</router-link>
       </li>
     </ul>
     <router-view></router-view>
@@ -27,6 +46,17 @@ export default {
     return {
       message: "App Hello World",
     };
+  },
+  computed: {
+    isLoggedIn() {
+      return this.$store.getters["account/getIsLoggedIn"];
+    },
+  },
+  methods: {
+    logout() {
+      this.$store.dispatch("account/logout");
+      this.$router.push("home");
+    },
   },
 };
 </script>
