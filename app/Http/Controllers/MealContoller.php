@@ -49,4 +49,9 @@ class MealContoller extends Controller
             'amount' => $validated['amount'],
         ]);
     }
+    public function meal_top()
+    {
+        $meals = Meal::orderby('chosen', 'desc')->limit(5)->get();
+        return $meals;
+    }
 }

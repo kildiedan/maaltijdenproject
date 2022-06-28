@@ -10,6 +10,8 @@ class StorageController extends Controller
 {
     public function index()
     {
+        $user_ingredient = user_ingredient::all();
+        return $user_ingredient;
     }
     public function store(Request $request)
     {

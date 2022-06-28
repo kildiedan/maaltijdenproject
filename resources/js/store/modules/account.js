@@ -22,7 +22,6 @@ export const account = {
     },
     actions: {
         async login({commit}, payload) {
-            console.log(payload);
             const {data} = await axios.post('login', payload);
             console.log('test');
             commit('account/SET', data, {root: true});
