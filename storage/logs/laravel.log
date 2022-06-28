@@ -4833,3 +4833,13 @@ Did you mean this?
 #38 C:\\Users\\kildi\\OneDrive\\Documenten\\GitHub\\maaltijdenproject\\server.php(21): require_once('C:\\\\Users\\\\kildi\\\\...')
 #39 {main}
 "} 
+[2022-06-28 13:00:28] local.ERROR: There are no commands defined in the "breeze" namespace. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\NamespaceNotFoundException(code: 0): There are no commands defined in the \"breeze\" namespace. at C:\\Users\\kildi\\OneDrive\\Documenten\\GitHub\\maaltijdenproject\\vendor\\symfony\\console\\Application.php:612)
+[stacktrace]
+#0 C:\\Users\\kildi\\OneDrive\\Documenten\\GitHub\\maaltijdenproject\\vendor\\symfony\\console\\Application.php(663): Symfony\\Component\\Console\\Application->findNamespace()
+#1 C:\\Users\\kildi\\OneDrive\\Documenten\\GitHub\\maaltijdenproject\\vendor\\symfony\\console\\Application.php(255): Symfony\\Component\\Console\\Application->find()
+#2 C:\\Users\\kildi\\OneDrive\\Documenten\\GitHub\\maaltijdenproject\\vendor\\symfony\\console\\Application.php(167): Symfony\\Component\\Console\\Application->doRun()
+#3 C:\\Users\\kildi\\OneDrive\\Documenten\\GitHub\\maaltijdenproject\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(92): Symfony\\Component\\Console\\Application->run()
+#4 C:\\Users\\kildi\\OneDrive\\Documenten\\GitHub\\maaltijdenproject\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Console\\Application->run()
+#5 C:\\Users\\kildi\\OneDrive\\Documenten\\GitHub\\maaltijdenproject\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#6 {main}
+"} 
