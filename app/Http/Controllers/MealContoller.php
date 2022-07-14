@@ -48,10 +48,19 @@ class MealContoller extends Controller
             'ingredient_id' => $validated['ingredient_id'],
             'amount' => $validated['amount'],
         ]);
+
+        $meal_ingredient = ingredient_meal::all();
+        return $meal_ingredient;
     }
     public function meal_top()
     {
         $meals = Meal::orderby('chosen', 'desc')->limit(5)->get();
         return $meals;
+    }
+
+    public function meal_recipe()
+    {
+        $meal_ingredient = ingredient_meal::all();
+        return $meal_ingredient;
     }
 }

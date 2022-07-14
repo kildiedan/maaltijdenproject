@@ -26,11 +26,31 @@
         </select>
       </p>
       <p>
-        ingredient amount:
-        <input type="number" id="amount" v-model="amount" />
+        ingredient amount in meal:
+        <input v-model="amount" type="number" id="amount" />
       </p>
       <button>submit</button>
     </form>
+    <table>
+      <tr>
+        <th>ingredient name</th>
+        <th>amount</th>
+      </tr>
+      <tr
+        v-for="recipe in recipe"
+        :key="recipe.id"
+        v-if="meal == recipe.meal_id"
+      >
+        <td
+          v-for="ingredient in ingredients"
+          :key="ingredient.id"
+          v-if="recipe.ingredient_id == ingredient.id"
+        >
+          {{ ingredient.name }}
+        </td>
+        <td>{{ recipe.amount }}</td>
+      </tr>
+    </table>
   </div>
 </template>
 
@@ -53,10 +73,14 @@ export default {
     meals() {
       return this.$store.getters["meals/getAll"];
     },
+    recipe() {
+      return this.$store.getters["meals/getRecipe"];
+    },
   },
   mounted() {
     this.$store.dispatch("ingredients/setAll");
     this.$store.dispatch("meals/setAll");
+    this.$store.dispatch("meals/setRecipe");
   },
   methods: {
     MealIngredient() {
@@ -65,7 +89,6 @@ export default {
       formData.append("amount", this.amount);
       formData.append("ingredient_id", this.ingredient);
       this.$store.dispatch("meals/ingredient_add", formData);
-      this.meal = 0;
       this.ingredient = 0;
       this.amount = "";
     },

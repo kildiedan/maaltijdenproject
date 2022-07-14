@@ -4,10 +4,11 @@ export const account = {
     namespaced: true,
     state: () => ({
         user: JSON.parse(localStorage.getItem('user')),
+        // user: {},
         isLoggedIn: localStorage.getItem('loggedIn') === 'true',
     }),
     getters: {
-        get: state => state.user,
+        getUser: state => state.user,
         getIsLoggedIn: state => state.isLoggedIn,
     },
     mutations: {
@@ -22,8 +23,7 @@ export const account = {
     },
     actions: {
         async login({commit}, payload) {
-            const {data} = await axios.post('login', payload);
-            console.log('test');
+            const {data: {data}} = await axios.post('login', payload);
             commit('account/SET', data, {root: true});
             commit('SET_LOGGEDIN', true);
         },

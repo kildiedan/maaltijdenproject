@@ -12,6 +12,9 @@ import '../css/app.scss'
 new Vue({
     el: "#app",
     router,
-    render: (h) => h(App),
     store,
+    mounted() {
+        this.$store.dispatch('account/set');
+    },
+    render: (h) => h(App),
 });

@@ -6,11 +6,12 @@
       <tr>
         <th>ingredient name</th>
         <th>amount</th>
+        <th>delete</th>
       </tr>
       <tr
         v-for="storage in storage"
         :key="storage.id"
-        v-if="user_id == storage.user_id"
+        v-if="user.id == storage.user_id"
       >
         <td
           v-for="ingredient in ingredients"
@@ -20,6 +21,7 @@
           {{ ingredient.name }}
         </td>
         <td>{{ storage.amount }}</td>
+        <td><button>delete</button></td>
       </tr>
     </table>
 
@@ -69,7 +71,6 @@ export default {
       ingredient: 0,
       amount: 0,
       category: 0,
-      user_id: 1,
     };
   },
 
@@ -81,19 +82,23 @@ export default {
       return this.$store.getters["categories/getAll"];
     },
     storage() {
-      return this.$store.getters["ingredients/getStorage"];
+      return this.$store.getters["storage/getAll"];
+    },
+    user() {
+      return this.$store.getters["account/getUser"];
     },
   },
   mounted() {
     this.$store.dispatch("ingredients/setAll");
     this.$store.dispatch("categories/setAll");
-    this.$store.dispatch("ingredients/setStorage");
+    this.$store.dispatch("storage/setAll");
   },
   methods: {
     storage_add() {
       const formData = new FormData();
       formData.append("ingredient_id", this.ingredient);
       formData.append("amount", this.amount);
+      formData.append("user_id", this.user.id);
       this.$store.dispatch("storage/create", formData);
       this.ingredient = 0;
       this.amount = 0;

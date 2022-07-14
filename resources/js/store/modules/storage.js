@@ -17,7 +17,7 @@ export const storage = {
         },
         async create({commit}, payload) {
             console.log();
-            const {data} = await axios.post('storage', payload);
+            const {data} = await axios.post('storage_add', payload);
             commit('SET_ALL', data);
         },
         async remove({commit}, payload) {

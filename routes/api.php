@@ -31,11 +31,14 @@ Route::post('meals', [MealContoller::class, 'store']);
 Route::post('remove-meal', [MealContoller::class, 'delete']);
 Route::post('meal_ingredient', [MealContoller::class, 'add']);
 Route::post('meal_top', [MealContoller::class, 'meal_top']);
+Route::post('meal_recipe', [MealContoller::class, 'meal_recipe']);
 
 Route::post('login', [AuthenticatedSessionController::class, 'store']);
 Route::get('logout', [AuthenticatedSessionController::class, 'destroy']);
 Route::post('register', [RegisteredUserController::class, 'store'])->middleware('guest');
-Route::get('me', [AuthenticatedSessionController::class, 'me'])->middleware('auth');
+Route::get('me', [AuthenticatedSessionController::class, 'me'])->middleware('web');
 
-Route::post('storage', [StorageController::class, 'store']);
+Route::get('storage', [StorageController::class, 'index']);
+Route::post('storage_add', [StorageController::class, 'store']);
 Route::get('user_ingrdients', [StorageController::class, 'index']);
+Route::post('storage_add', [StorageController::class, 'store']);

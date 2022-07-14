@@ -18,14 +18,17 @@ class StorageController extends Controller
         $validated = $this->validate($request, [
             'ingredient_id' => 'required',
             'amount' => 'required',
+            'user_id' => 'required',
         ]);
 
         $storage = user_ingredient::create([
             'ingredient_id' => $validated['ingredient_id'],
             'amount' => $validated['amount'],
-            'user_id' => '1', // moet nog zorgen dat het met auth::id werkt
+            'user_id' => $validated['user_id'],
 
         ]);
+        $user_ingredient = user_ingredient::all();
+        return $user_ingredient;
     }
     public function delete(Request $request)
     {

@@ -6,33 +6,33 @@
       <li>
         <router-link to="/">Home</router-link>
       </li>
-      <li>
+      <li v-if="isLoggedIn">
         <router-link to="/add/meal">Add meal</router-link>
       </li>
-      <li>
+      <li v-if="isLoggedIn">
         <router-link to="/add/meal/ingredients"
           >Add meal ingredient</router-link
         >
       </li>
-      <li>
+      <li v-if="isLoggedIn">
         <router-link to="/add/ingredient">Add ingredients</router-link>
       </li>
 
-      <li>
+      <li v-if="isLoggedIn">
         <router-link to="/ingredients">Storage</router-link>
       </li>
-      <li>
+      <li v-if="isLoggedIn">
         <router-link to="/all">All meal and ingredients</router-link>
       </li>
 
       <li>
         <router-link v-if="!isLoggedIn" to="/login">Login</router-link>
-        <a v-if="isLoggedIn" class="nav-link pe-auto" href="#" @click="logout">
+        <a v-if="isLoggedIn" class="nav-link pe-auto" @click="logout">
           Logout
         </a>
       </li>
-      <li>
-        <router-link v-if="!isLoggedIn" to="/register">Register</router-link>
+      <li v-if="!isLoggedIn">
+        <router-link to="/register">Register</router-link>
       </li>
     </ul>
     <router-view></router-view>
@@ -55,7 +55,7 @@ export default {
   methods: {
     logout() {
       this.$store.dispatch("account/logout");
-      this.$router.push("home");
+      this.$router.push("/");
     },
   },
 };
