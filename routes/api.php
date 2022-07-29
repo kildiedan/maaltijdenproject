@@ -32,6 +32,7 @@ Route::post('remove-meal', [MealContoller::class, 'delete']);
 Route::post('meal_ingredient', [MealContoller::class, 'add']);
 Route::post('meal_top', [MealContoller::class, 'meal_top']);
 Route::post('meal_recipe', [MealContoller::class, 'meal_recipe']);
+Route::post('made-meal', [MealContoller::class, 'made']);
 
 Route::post('login', [AuthenticatedSessionController::class, 'store']);
 Route::get('logout', [AuthenticatedSessionController::class, 'destroy']);
@@ -41,4 +42,4 @@ Route::get('me', [AuthenticatedSessionController::class, 'me'])->middleware('web
 Route::get('storage', [StorageController::class, 'index']);
 Route::post('storage_add', [StorageController::class, 'store']);
 Route::get('user_ingrdients', [StorageController::class, 'index']);
-Route::post('storage_add', [StorageController::class, 'store']);
+Route::post('storage_delete', [StorageController::class, 'delete']);

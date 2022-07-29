@@ -21,7 +21,7 @@
           {{ ingredient.name }}
         </td>
         <td>{{ storage.amount }}</td>
-        <td><button>delete</button></td>
+        <td><button @click="deleteStorage(storage.id)">delete</button></td>
       </tr>
     </table>
 
@@ -102,6 +102,9 @@ export default {
       this.$store.dispatch("storage/create", formData);
       this.ingredient = 0;
       this.amount = 0;
+    },
+    deleteStorage(id) {
+      this.$store.dispatch("storage/remove", id);
     },
   },
 };

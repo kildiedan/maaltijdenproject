@@ -53,8 +53,6 @@ class AuthenticatedSessionController extends Controller
     }
     public function me(Request $request): UserResource
     {
-        // dd($request->session());
-        dd(Auth::user());
         return new UserResource(Auth::user());
     }
 }

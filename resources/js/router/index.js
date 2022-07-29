@@ -9,6 +9,8 @@ import All from '../pages/All.vue';
 import login from '../pages/auth/Login.vue';
 import register from '../pages/auth/register.vue';
 import Add_meal_ingredient from '../pages/Add_meal_ingredient.vue';
+import Meal_select from '../pages/Meal_select.vue';
+import Meal from '../pages/Meal.vue';
 import store from '../store';
 Vue.use(VueRouter);
 
@@ -23,30 +25,26 @@ const router = new VueRouter({
             path: "/add/meal",
             component: Add_meal,
             name: 'add meal',
-            // meta: {
-            //     shouldBeLoggedIn: true,
-            // },
         },
         {
             path: "/add/meal/ingredients",
             component: Add_meal_ingredient,
             name: 'add meal ingredient',
-            // meta: {
-            //     shouldBeLoggedIn: true,
-            // },
         },
         {
             path: "/add/ingredient",
             component: Add_ingredient,
             name: 'add ingredient',
-            // meta: {
-            //     shouldBeLoggedIn: true,
-            // },
         },
         {
             path: "/ingredients",
             component: Storage,
             name: 'storage',
+        },
+        {
+            path: "/select/meal",
+            component: Meal_select,
+            name: 'Meal select',
         },
         {
             path: "/all",
@@ -62,6 +60,11 @@ const router = new VueRouter({
             path: "/register",
             component: register,
             name: 'register',
+        },
+        {
+            path: '/meals/:id',
+            component: Meal,
+            name: 'meal',
         },
         
 

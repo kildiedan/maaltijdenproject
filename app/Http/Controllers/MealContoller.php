@@ -63,4 +63,12 @@ class MealContoller extends Controller
         $meal_ingredient = ingredient_meal::all();
         return $meal_ingredient;
     }
+    public function made(Request $request)
+    {
+        $meal = meal::findorfail($request->id)->get();
+        $chosen = $meal->chosen + 1;
+        $meal->chosen = $chosen;
+        $meal->save();
+        return meal::all();
+    }
 }

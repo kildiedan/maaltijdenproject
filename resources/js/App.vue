@@ -19,6 +19,10 @@
       </li>
 
       <li v-if="isLoggedIn">
+        <router-link to="/select/meal">Meal select</router-link>
+      </li>
+
+      <li v-if="isLoggedIn">
         <router-link to="/ingredients">Storage</router-link>
       </li>
       <li v-if="isLoggedIn">

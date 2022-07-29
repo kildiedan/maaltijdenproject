@@ -32,5 +32,7 @@ class StorageController extends Controller
     }
     public function delete(Request $request)
     {
+        $meal = user_ingredient::findOrFail($request->id)->delete();
+        return user_ingredient::all();
     }
 }

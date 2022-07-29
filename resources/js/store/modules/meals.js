@@ -44,5 +44,9 @@ export const meals = {
             const {data} = await axios.post('meal_recipe');
             commit('SET_RECIPE', data);
         },
+        async madeMeal({commit}, payload) {
+            const {data} = await axios.post('made-meal', {id: payload});
+            commit('SET_ALL', data);
+        },
     },
 };
